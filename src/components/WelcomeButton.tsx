@@ -1,10 +1,9 @@
-import React, { ReactElement, ReactNode } from 'react';
-import { StyleSheet, Text, TouchableOpacity, TouchableOpacityProps, View } from 'react-native'
+import React, { ReactNode } from 'react';
+import { StyleSheet, Text, TouchableOpacity, TouchableOpacityProps } from 'react-native'
 
 import colors from '../styles/colors'
 
 interface ButtonProps extends TouchableOpacityProps {
-  
   children: ReactNode;
 }
 
