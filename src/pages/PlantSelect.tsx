@@ -23,7 +23,7 @@ interface EnviromentProps {
 
 
 export function PlantSelect() {
-  const [environments, setEnvironments] = useState()
+  const [environments, setEnvironments] = useState<EnviromentProps>()
 
   useEffect(() => {
     async function fetchEnvironmet(){
