@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   FlatList,
   Image,
@@ -17,6 +17,8 @@ import colors from '../styles/colors'
 import fonts from '../styles/fonts'
 
 export function PlantSelect() {
+  const [environments, setEnvironments] = useState()
+
   useEffect(() => {
     async function fetchEnvironmet(){
       const { data } = await api.get('plants_environments')
