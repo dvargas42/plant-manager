@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   FlatList,
   Image,
@@ -12,10 +12,18 @@ import {
 import { Header } from '../components/Header'
 import { EnvironmentButton } from '../components/EnvironmentButton';
 
+import { api } from '../services/api';
 import colors from '../styles/colors'
 import fonts from '../styles/fonts'
 
 export function PlantSelect() {
+  useEffect(() => {
+    async function fetchEnvironmet(){
+      const { data } = await api.get('plants_environments')
+    }
+
+    fetchEnvironmet()
+  },[])
   return (
     <SafeAreaView style={styles.constainer}>
       <Header />
