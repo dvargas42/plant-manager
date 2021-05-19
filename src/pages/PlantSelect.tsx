@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigation } from '@react-navigation/native'
 import {
   ActivityIndicator,
   FlatList,
@@ -14,7 +15,7 @@ import { Header } from '../components/Header'
 import { EnvironmentButton } from '../components/EnvironmentButton';
 import { PlantCardPrimary } from '../components/PlantCardPrimary';
 import { Load } from '../components/Load'
-
+import { PlantProps } from '../libs/storage'
 
 import colors from '../styles/colors'
 import fonts from '../styles/fonts'
@@ -24,44 +25,17 @@ interface EnviromentProps {
   title: string;
 }
 
-interface PlantProps {
-  id: number,
-  name: string,
-  about: string,
-  water_tips: string,
-  photo: string,
-  environments: string[],
-  frequency: {
-    times: number,
-    repeat_every: string,
-  }
-}
-
-
 export function PlantSelect() {
   const [environments, setEnvironments] = useState<EnviromentProps[]>([])
   const [environmentSelected, setEnvironmentSelected] = useState('all')
   const [plants, setPlants] = useState<PlantProps[]>([])
   const [filteredPlants, setFilteredPlants] = useState<PlantProps[]>([])
   const [loading, setLoading] = useState(true)
+  
+  const navigation = useNavigation()
 
   const [page, setPage] = useState(1)
   const [loadingMore, setLoadingMore] = useState(false)
-  const [loadedAll, serLoadedAll] = useState(false)
-
-
-  function handleEnvironmentSelected(environment: string) {
-    setEnvironmentSelected(environment)
-
-    if (environment === 'all') {
-      return setFilteredPlants(plants);
-    }
-
-    const filtered = plants.filter(plant => (
-      plant.environments.includes(environment)
-    ))
-    setFilteredPlants(filtered)
-  }
 
   async function fetchPlants() {
     //const { data } = await api.get(`plants?_sort=name&_order=asc&_page=${page}`)
@@ -89,6 +63,19 @@ export function PlantSelect() {
     setLoadingMore(false)
   }
 
+  function handleEnvironmentSelected(environment: string) {
+    setEnvironmentSelected(environment)
+
+    if (environment === 'all') {
+      return setFilteredPlants(plants);
+    }
+
+    const filtered = plants.filter(plant => (
+      plant.environments.includes(environment)
+    ))
+    setFilteredPlants(filtered)
+  }
+
   function handleFetchMore(distance: number) {
     if(distance < 1)
       return;
@@ -96,6 +83,10 @@ export function PlantSelect() {
     setLoadingMore(true)
     setPage(oldValue => oldValue + 1)
     fetchPlants()
+  }
+
+  function handlePlantSelect(plant: PlantProps) {
+    navigation.navigate('PlantSave', { plant })
   }
 
   useEffect(() => {
@@ -111,13 +102,12 @@ export function PlantSelect() {
   },[])
 
   useEffect(() =>{
-    
-
     fetchPlants()
   },[])
   
   if (loading)
     return <Load />
+
   return (
     <SafeAreaView style={styles.constainer}>
       <Header />
@@ -138,6 +128,7 @@ export function PlantSelect() {
       <View>
         <FlatList 
           data={environments}
+          keyExtractor={(item) => String(item.key)}
           renderItem={({ item }) => (
             <EnvironmentButton
               title={item.title}
@@ -154,8 +145,12 @@ export function PlantSelect() {
       <View style={styles.plantsContainer}>
         <FlatList 
           data={filteredPlants}
+          keyExtractor={(item) => String(item.id)}
           renderItem={ ({ item }) => (
-            <PlantCardPrimary data={item} />
+            <PlantCardPrimary 
+              data={item}
+              onPress={() => handlePlantSelect(item)}
+            />
           )}
           showsVerticalScrollIndicator={false}
           numColumns={2}
