@@ -10,23 +10,23 @@
 
 <p align="center">
 
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/dvargas42/plant-manager?color=ff69b4">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/dvargas42/plant-manager?color=brightgreen">
 
   <a href="https://www.linkedin.com/in/daniel-santos-040983ab/" target="_blank" rel="noopener noreferrer">
-    <img alt="Made by" src="https://img.shields.io/badge/made%20by-Daniel%20Vargas-ff69b4">
+    <img alt="Made by" src="https://img.shields.io/badge/made%20by-Daniel%20Vargas-brightgreen">
   </a>
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/dvargas42/plant-manager?color=ff69b4">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/dvargas42/plant-manager?color=brightgreen">
 
   <a href="https://github.com/dvargas42/plant-manager/commits/main">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/dvargas42/plant-manager?color=ff69b4">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/dvargas42/plant-manager?color=brightgreen">
   </a>
 
   <a href="https://github.com/dvargas42/plant-manager/issues">
-    <img alt="Repository issues" src="https://img.shields.io/github/issues/dvargas42/plant-manager?color=ff69b4">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/dvargas42/plant-manager?color=brightgreen">
   </a>
 
-  <img alt="GitHub" src="https://img.shields.io/github/license/dvargas42/plant-manager?color=ff69b4">
+  <img alt="GitHub" src="https://img.shields.io/github/license/dvargas42/plant-manager?color=brightgreen">
 </p>
 
 
@@ -51,13 +51,13 @@ implement resource functions and render information in React Native in a mobile 
 Images of the application in operation.
 
 <p align="center">
-<img alt="Screen01" src="https://res.cloudinary.com/dvargas42/image/upload/v1621415352/plantmanager/Tela03_hfnqx7.png" width="300px">
-<img alt="Screen02" src="https://res.cloudinary.com/dvargas42/image/upload/v1621415353/plantmanager/Tela04_ifvshr.png" width="300px">
+<img alt="Screen01" src="https://res.cloudinary.com/dvargas42/image/upload/v1621416849/plantmanager/Splash_wehvby.jpg" width="300px">
+<img alt="Screen02" src="https://res.cloudinary.com/dvargas42/image/upload/v1621416860/plantmanager/Bem_vindo_zulxhy.jpg" width="300px">
 </p>
 
 <p align="center">
 <img alt="Screen03" src="https://res.cloudinary.com/dvargas42/image/upload/v1621415354/plantmanager/Tela01_jnxg0d.png" width="300px">
-<img alt="Screen04" src="https://res.cloudinary.com/dvargas42/image/upload/v1621416849/plantmanager/Splash_wehvby.jpg" width="300px">
+<img alt="Screen04" src="https://res.cloudinary.com/dvargas42/image/upload/v1621415354/plantmanager/Tela02_ncj2gc.png" width="300px">
 </p>
 
 ## 🚀 Technologies
