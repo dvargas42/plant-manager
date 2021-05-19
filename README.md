@@ -1,4 +1,3 @@
-# plant-manager
 <h1 align="center">
   <img alt="Logo" src="./assets/logotype.svg" width="500px">
 </h1>
@@ -44,21 +43,21 @@
 
 ## 💇🏼 About the project
 
-This application was part of a challenge to test the ability to implement features
-functions and render information within React Native a mobile application .
+This app was part of a challenge to test the ability to 
+implement resource functions and render information in React Native in a mobile app.
 
 ## 📸 Sreenshots
 
 Images of the application in operation.
 
 <p align="center">
-<img alt="Screen01" src="https://res.cloudinary.com/dvargas42/image/upload/v1621415352/plantmanager/Tela03_hfnqx7.png" width="200px">
-<img alt="Screen02" src="https://res.cloudinary.com/dvargas42/image/upload/v1621415353/plantmanager/Tela04_ifvshr.png" width="200px">
+<img alt="Screen01" src="https://res.cloudinary.com/dvargas42/image/upload/v1621415352/plantmanager/Tela03_hfnqx7.png" width="300px">
+<img alt="Screen02" src="https://res.cloudinary.com/dvargas42/image/upload/v1621415353/plantmanager/Tela04_ifvshr.png" width="300px">
 </p>
 
 <p align="center">
-<img alt="Screen03" src="https://res.cloudinary.com/dvargas42/image/upload/v1621415354/plantmanager/Tela01_jnxg0d.png" width="200px">
-<img alt="Screen04" src="https://res.cloudinary.com/dvargas42/image/upload/v1621415354/plantmanager/Tela02_ncj2gc.png" width="200px">
+<img alt="Screen03" src="https://res.cloudinary.com/dvargas42/image/upload/v1621415354/plantmanager/Tela01_jnxg0d.png" width="300px">
+<img alt="Screen04" src="https://res.cloudinary.com/dvargas42/image/upload/v1621416849/plantmanager/Splash_wehvby.jpg" width="300px">
 </p>
 
 ## 🚀 Technologies
@@ -110,7 +109,7 @@ Well done, project is started!
 # Fork using GitHub official command line
 # If you don't have the GitHub CLI, use the web site to do that.
 
-$ gh repo fork dvargas42/plantmanager
+$ gh repo fork dvargas42/plant-manager
 ```
 
 **Follow the steps below**
