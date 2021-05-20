@@ -74,65 +74,76 @@ export function PlantSave() {
   }
 
   return (
-    <View style={styles.container}>
-      <View style={styles.plantInfo}>
-        <SvgFromUri 
-          uri={plant.photo}
-          height={150}
-          width={150}
-        />
-
-        <Text style={styles.plantName}>
-          {plant.name}
-        </Text>
-        <Text style={styles.plantAbout}>
-          {plant.about}
-        </Text>
-      </View>
-
-      <View style={styles.controller}>
-        <View style={styles.tipContainer}> 
-          <Image 
-            style={styles.tipImage}
-            source={waterdropImg}
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      contentContainerStyle={styles.container}
+    >
+      <View style={styles.container}>
+        <View style={styles.plantInfo}>
+          <SvgFromUri 
+            uri={plant.photo}
+            height={150}
+            width={150}
           />
 
-          <Text style={styles.tipText}>
-            {plant.water_tips}
+          <Text style={styles.plantName}>
+            {plant.name}
+          </Text>
+          <Text style={styles.plantAbout}>
+            {plant.about}
           </Text>
         </View>
 
-        <Text style={styles.alertLabel}>
-          Escolha o melhor horário para se lembrado:
-        </Text>
+        <View style={styles.controller}>
+          <View style={styles.tipContainer}> 
+            <Image 
+              style={styles.tipImage}
+              source={waterdropImg}
+            />
 
-        {showDatePicker &&
-          <DateTimePicker
-            value={selectedDateTime}
-            mode="time"
-            display="spinner"
-            onChange={handleChangeTime}
-          />
-        }
-
-        {Platform.OS === 'android' &&
-          <TouchableOpacity
-            style={styles.dateTimePickerButton}
-            onPress={handleOpenDateTimePickerForAndroid}
-          >
-            <Text style={styles.dateTimePickerText}>
-              {`Alterar ${format(selectedDateTime, 'HH:mm')}`}
+            <Text style={styles.tipText}>
+              {plant.water_tips}
             </Text>
-          </TouchableOpacity>
-        }
+          </View>
 
-        <Button
-          title="Cadastrar planta"
-          onPress={handleSave}
-        />
-        
+          <Text style={styles.alertLabel}>
+            Escolha o melhor horário para se lembrado:
+          </Text>
+
+          {showDatePicker &&
+            <DateTimePicker
+              value={selectedDateTime}
+              mode="time"
+              display="spinner"
+              onChange={handleChangeTime}
+            />
+          }
+
+          {Platform.OS === 'android' &&
+            <View style={styles.dateTimePicker}>
+              <TouchableOpacity
+                style={styles.dateTimePickerButton}
+                onPress={handleOpenDateTimePickerForAndroid}
+              >
+                <Text style={styles.dateTimePickerText}>
+                  Alterar
+                </Text>
+              </TouchableOpacity>
+
+              <Text style={styles.dateTimePickerHour}>
+                  {format(selectedDateTime, 'HH:mm')}
+              </Text>
+            </View>
+          }
+
+          <Button
+            title="Cadastrar planta"
+            onPress={handleSave}
+          />
+          
+        </View>
       </View>
-    </View>
+    </ScrollView>
   )
 }
 
@@ -207,15 +218,34 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 
-  dateTimePickerButton: {
-    width: '100%',
+  dateTimePicker: {
+    flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 40,
+    justifyContent: 'center',
+    paddingVertical: Platform.OS === 'android'? 30 : 40,
+  },
+
+  dateTimePickerButton: {
+    //width: '100%',
   },
 
   dateTimePickerText: {
+    height: 80,
+    paddingHorizontal: 20,
+    borderRadius: 20,
+    color: colors.heading,
+    fontSize: 24,
+    lineHeight: 80,
+    fontFamily: fonts.text,
+    backgroundColor: colors.shape,
+  },
+
+  dateTimePickerHour: {
     color: colors.heading,
     fontSize: 24,
     fontFamily: fonts.text,
-  },
+
+    marginLeft: 20,
+    
+  }
 })
